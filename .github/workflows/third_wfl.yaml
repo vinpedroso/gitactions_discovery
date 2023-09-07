@@ -21,6 +21,4 @@ jobs:
     steps:
       - name: read-logs
         run: |
-          pwd
-          ls ./
-          #tail -n1 ./source/logs.txt
+          tail -n1 ./source/logs.txt
