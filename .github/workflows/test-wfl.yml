@@ -1,0 +1,17 @@
+name: test-workflow
+on: workflow_dispatch
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+      - name: play-around-1
+        run: pwd
+      - name: play-around-2
+        run: ls ./
+      - name: play-around-3
+        run: ls ./source/
+
+
