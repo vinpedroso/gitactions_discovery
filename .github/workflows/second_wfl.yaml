@@ -1,0 +1,16 @@
+name: second-workflow
+on: push
+jobs:
+  push-time:
+  runs-on: ubuntu-latest
+  steps:
+    - name: get-repo-code
+      uses: actions/checkout@v4
+
+    - name: python-setup
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: run-py-script
+      run: python source/file_counter.py
