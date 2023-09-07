@@ -1,5 +1,5 @@
-name: test-workflow
-on: workflow_dispatch
+name: third-workflow
+on: pull_request
 
 jobs:
   write-logs: #jobs that run the script and writes the logs
