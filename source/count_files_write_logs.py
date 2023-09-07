@@ -1,6 +1,6 @@
 import logging, os, os.path
 
-DIR = '.'
+DIR = './source'
 
 file_count: int = len([name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))])
 
