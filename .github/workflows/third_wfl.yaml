@@ -1,11 +1,14 @@
-name: third-workflow
-on: pull_request
+name: test-workflow
+on: workflow_dispatch
+
 jobs:
-  count-files: #JOB1
+  write-logs: #jobs that run the script and writes the logs
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
         uses: actions/checkout@v4
+        with:
+          ref: "main"
 
       - name: python-setup
         uses: actions/setup-python@v4
@@ -15,6 +18,16 @@ jobs:
       - name: run-py-script
         run: python source/count_files_write_logs.py
 
+      - name: commit-logs
+        run: |
+          git config user.name "Vinicius Pedroso"
+          git config user.email "vpedroso@wiley.com"
+          git add .
+          git diff
+          export timestamp=$(date)
+          git commit -m "3rd_workflow_logs_written - $timestamp"
+          git push
+
   read-logs: #JOB2
     needs: count-files #job which the current job depends on!
     runs-on: ubuntu-latest
@@ -22,3 +35,5 @@ jobs:
       - name: read-logs
         run: |
           tail -n1 ./source/logs.txt
+
+
