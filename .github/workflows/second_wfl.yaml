@@ -1,7 +1,7 @@
 name: second-workflow
 on: push
 jobs:
-  push-time:
+  count-files:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
