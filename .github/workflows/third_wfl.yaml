@@ -20,4 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: read-logs
-        run: tail -n1 source/logs.txt
+        run: |
+          pwd
+          ls ./
+          #tail -n1 ./source/logs.txt
