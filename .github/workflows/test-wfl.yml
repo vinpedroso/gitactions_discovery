@@ -18,6 +18,8 @@ jobs:
 
       - name: commit-logs
         run: |
+          git config user.name "Vinicius Pedroso"
+          git config user.email "vpedroso@wiley.com"
           git add .
           export timestamp=$(date)
           git commit -m "3rd_workflow_logs_written - $timestamp"
