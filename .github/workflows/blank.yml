@@ -1,0 +1,17 @@
+
+# workflow name
+name: first-workflow
+
+# on which events it should be triggers
+on: workflow_dispatch #awaitable event that tells the this workflow should be manually triggered
+
+# define its jobs (plural kword)
+jobs: 
+  first-job: # job name
+    runs-on: ubuntu-latest # specifies the job's runner
+    steps: # yaml list of steps inside the job
+      - name: step1-hello-world # step name
+        run: echo -n "hellow world!" #step command (a in case, CLI one)
+      - name: step2-print-fulldate
+        run: date
+    
