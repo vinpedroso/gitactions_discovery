@@ -29,7 +29,7 @@ jobs:
           git push
 
   read-logs: #JOB2
-    needs: count-files #job which the current job depends on!
+    needs: write-logs #job which the current job depends on!
     runs-on: ubuntu-latest
     steps:
       - name: read-logs
