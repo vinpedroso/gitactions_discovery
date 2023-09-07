@@ -1,0 +1,11 @@
+name: fourth-workflow
+on: workflow-dispatch
+
+jobs:
+	output-info:
+		runs-on: ubuntu-latest
+		steps:
+			- name: output-github-context
+			- run: echo "${{ toJSON(github) }}" 
+			# notice the special syntaxt to access gitActions contexts
+			# the toJSON() function is also provided by gitActions
