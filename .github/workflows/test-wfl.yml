@@ -2,22 +2,35 @@ name: test-workflow
 on: workflow_dispatch
 
 jobs:
-  test-job:
+  count-files: #JOB1
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
         uses: actions/checkout@v4
-      - name: play-around-1
-        run: pwd
-      - name: play-around-2
-        run: ls ./
-      - name: play-around-3
-        run: ls ./source/
-      - name: play-around-4
-        run: cat ./source/logs.txt
+
+      - name: python-setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
       - name: run-py-script
-        run: python ./source/count_files_write_logs.py
-      - name: play-around-6
-        run: tail -n1 ./source/logs.txt
+        run: python source/count_files_write_logs.py
+
+      - name: commit-logs
+        run: |
+          git config user.name github-actions
+          git config user.email vpedroso@wiley.com
+          git add .
+          export timestamp=$(date)
+          git commit -m "3rd_workflow_logs_written - $timestamp"
+          git push
+
+  read-logs: #JOB2
+    needs: count-files #job which the current job depends on!
+    runs-on: ubuntu-latest
+    steps:
+      - name: read-logs
+        run: |
+          tail -n1 ./source/logs.txt
 
 
