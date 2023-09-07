@@ -1,8 +1,7 @@
 name: third-workflow
-on: push
+on: pull_request
 jobs:
-  # JOB 1
-  count-files:
+  count-files: #JOB1
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
@@ -16,8 +15,7 @@ jobs:
       - name: run-py-script
         run: python source/count_files_write_logs.py
 
-  # JOB 2
-  read-logs:
+  read-logs: #JOB2
     needs: count-files #job which the current job depends on!
     runs-on: ubuntu-latest
     steps:
