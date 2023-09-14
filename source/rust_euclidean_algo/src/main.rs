@@ -1,3 +1,4 @@
+use std::fs::File;
 use std::io::Write;
 use std::str::FromStr;
 
@@ -16,6 +17,7 @@ fn main() {
         {d = gcd(d, *m);}
     
     println!("The greatest common divisor of {:?} is {}",numbers, d);
+    write_answer_to_txt_file(&d);
 } 
 
 fn gcd(mut x: u64, mut y: u64) -> u64 {
@@ -29,4 +31,10 @@ fn gcd(mut x: u64, mut y: u64) -> u64 {
         y = y % x; 
     }
     x 
+}
+
+fn write_answer_to_txt_file(inp: &u64) -> std::io::Result<()> {
+    let path = "results.txt";
+    let mut output = File::create(path)?;
+    write!(output,"{}", &inp)
 }
