@@ -1,11 +1,11 @@
 name: fifth-workflow
 on:
-  workflow_dispatch: 
 	push:
 		branches:
 			- main
 		paths-ignore:
 			- '.github/workflows/**' 
+  workflow_dispatch: 
 jobs:
   rust-job:
     runs-on: ubuntu-latest
