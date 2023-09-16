@@ -1,0 +1,29 @@
+name: fifth-workflow
+on:
+  workflow_dispatch: #colon necessary when you have multiple triggers
+	push:
+		branches:
+			- main
+		paths-ignore:
+			- '.github/workflows/**' 
+jobs:
+  rust-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: rust-install
+        uses: ATiltedTree/setup-rust@v1
+        with:
+          rust-version: 1.27
+
+      - name: test-rust-euclidean-algo
+        run: |
+          cd source/rust_euclidean_algo/   
+          cargo run 13 169
+
+      - name: upload-test-result-artifact
+        with:
+          name: result-artifact
+          path: ./source/rust_euclidean_algo/target/result.txt
