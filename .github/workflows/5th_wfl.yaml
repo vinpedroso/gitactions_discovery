@@ -1,6 +1,6 @@
 name: fifth-workflow
 on:
-  workflow_dispatch: #colon necessary when you have multiple triggers
+  workflow_dispatch: 
 	push:
 		branches:
 			- main
