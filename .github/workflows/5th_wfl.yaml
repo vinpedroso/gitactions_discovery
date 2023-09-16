@@ -2,7 +2,7 @@ name: fifth-workflow
 on:
   push:
     branches:
-      - main
+      - 'main'
     paths-ignore:
       - '.github/workflows/**' 
   workflow_dispatch: 
