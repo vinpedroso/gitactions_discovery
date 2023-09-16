@@ -16,7 +16,7 @@ jobs:
       - name: rust-install
         uses: ATiltedTree/setup-rust@v1
         with:
-          rust-version: 1.27
+          rust-version: 1.72
 
       - name: test-rust-euclidean-algo
         run: |
