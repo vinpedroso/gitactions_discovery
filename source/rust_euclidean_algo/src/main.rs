@@ -17,7 +17,8 @@ fn main() {
         {d = gcd(d, *m);}
     
     println!("The greatest common divisor of {:?} is {}",numbers, d);
-    write_answer_to_txt_file(&d);
+    let file_path = "./target/result.txt";
+    let _ = write_answer_to_txt_file(file_path,&d);
 } 
 
 fn gcd(mut x: u64, mut y: u64) -> u64 {
@@ -33,8 +34,12 @@ fn gcd(mut x: u64, mut y: u64) -> u64 {
     x 
 }
 
-fn write_answer_to_txt_file(inp: &u64) -> std::io::Result<()> {
-    let path = "results.txt";
-    let mut output = File::create(path)?;
+fn write_answer_to_txt_file(file_path: &str, inp: &u64) -> std::io::Result<()> {
+    let mut output = File::create(file_path)?;
     write!(output,"{}", &inp)
 }
+
+//fn write_answer_to_txt_file(file_path: &str, content: &[u64]) {
+//    let mut file = File::create(file_path).unwrap();
+//    file.write_all(content).unwrap();
+//}
