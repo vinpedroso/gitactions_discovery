@@ -12,16 +12,17 @@ jobs:
     steps:
       - name: get-repo-code
         uses: actions/checkout@v4
-
-      - name: rust-install
-        uses: ATiltedTree/setup-rust@v1
+      
+      - name: rust-setup
+        uses: actions-rs/toolchain@v1
         with:
-          rust-version: 1.72
-
+          toolchain: 1.72
+      
       - name: test-rust-euclidean-algo
-        run: |
-          cd source/rust_euclidean_algo/   
-          cargo run 13 169
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: 13 169
 
       - name: upload-test-result-artifact
         uses: actions/checkout@v3
