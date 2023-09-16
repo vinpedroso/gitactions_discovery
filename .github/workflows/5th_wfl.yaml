@@ -10,25 +10,21 @@ jobs:
   rust-job:
     runs-on: ubuntu-latest
     steps:
-      - name: repo-setup
+      - name: get-repo-code
         uses: actions/checkout@v4
 
-      - name: path-setup
-        run: cd source/rust_euclidean_algo
-      
-      - name: rust-setup
-        uses: actions-rs/toolchain@v1
+      - name: rust-install
+        uses: ATiltedTree/setup-rust@v1
         with:
-          toolchain: 1.72
-      
+          rust-version: 1.72
+
       - name: test-rust-euclidean-algo
-        uses: actions-rs/cargo@v1
-        with:
-          command: run
-          args: 13 169
+        run: |
+          cd source/rust_euclidean_algo/   
+          cargo run 13 169
 
       - name: upload-test-result-artifact
         uses: actions/checkout@v3
         with:
           name: result-artifact
-          path: target/result.txt
+          path: ./source/rust_euclidean_algo/target/result.txt
