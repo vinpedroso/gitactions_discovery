@@ -10,8 +10,10 @@ jobs:
   rust-job:
     runs-on: ubuntu-latest
     steps:
-      - name: repo-n-path-setup
+      - name: repo-setup
         uses: actions/checkout@v4
+
+      - name: path-setup
         run: cd source/rust_euclidean_algo
       
       - name: rust-setup
