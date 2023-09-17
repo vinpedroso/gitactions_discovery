@@ -27,5 +27,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: result
-          path: source/rust_euclidean_algo/result.txt
+          path: source/rust_euclidean_algo/target/result.txt
           if-no-files-found: error
