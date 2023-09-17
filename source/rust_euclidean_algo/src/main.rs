@@ -38,8 +38,3 @@ fn write_answer_to_txt_file(file_path: &str, inp: &u64) -> std::io::Result<()> {
     let mut output = File::create(file_path)?;
     write!(output,"{}", &inp)
 }
-
-//fn write_answer_to_txt_file(file_path: &str, content: &[u64]) {
-//    let mut file = File::create(file_path).unwrap();
-//    file.write_all(content).unwrap();
-//}
