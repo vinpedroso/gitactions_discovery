@@ -23,7 +23,8 @@ jobs:
           cd source/rust_euclidean_algo/   
           cargo run 13 169
 
-      - uses: actions/checkout@v3
+      - name: upload-test-result-artifact
+        uses: actions/upload-artifact@v3
         with:
           name: result
           path: source/rust_euclidean_algo/result.txt
