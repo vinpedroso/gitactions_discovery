@@ -28,6 +28,7 @@ jobs:
         with:
           name: result
           path: source/rust_euclidean_algo/result.txt
+          if-file-not-found: error
   extra-job:
     runs-on: ubuntu-latest
     steps:
