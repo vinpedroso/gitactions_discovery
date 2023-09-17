@@ -26,6 +26,6 @@ jobs:
       - name: upload-test-result-artifact
         uses: actions/checkout@v3
         with:
-          name: result-artifact
+          name: result
           path: source/rust_euclidean_algo/result.txt
           if-no-files-found: error
