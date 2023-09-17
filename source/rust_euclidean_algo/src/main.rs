@@ -17,7 +17,7 @@ fn main() {
         {d = gcd(d, *m);}
     
     println!("The greatest common divisor of {:?} is {}",numbers, d);
-    let file_path = "./result.txt";
+    let file_path = "./target/result.txt";
     let _ = write_answer_to_txt_file(file_path,&d);
 } 
 
