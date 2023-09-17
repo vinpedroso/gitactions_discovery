@@ -28,4 +28,4 @@ jobs:
         with:
           name: result
           path: source/rust_euclidean_algo/result.txt
-          if-file-not-found: error
+          if-no-files-found: error
