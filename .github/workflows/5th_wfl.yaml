@@ -14,15 +14,14 @@ jobs:
         uses: actions/checkout@v4
 
       - name: rust-install
-        uses: actions-rs/toolchain@v1
+        uses: ATiltedTree/setup-rust@v1
         with:
-          toolchain: 1.72
+          rust-version: 1.72
 
       - name: test-rust-euclidean-algo
-        uses:  actions-rs/cargo@v1
-        with:
-          command: run
-          args: 13 169
+        run: |
+          cd source/rust_euclidean_algo/   
+          cargo run 13 169
 
       - name: upload-test-result-artifact
         uses: actions/upload-artifact@v3
@@ -30,5 +29,3 @@ jobs:
           name: result
           path: source/rust_euclidean_algo/result.txt
           if-file-not-found: error
-
-
