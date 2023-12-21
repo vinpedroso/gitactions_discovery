@@ -33,6 +33,7 @@ jobs:
   download_job:
     needs: rust-job
     runs-on: ubuntu-latest
+    steps:
      - name: download-artifact-job
        uses: actions/download-artifact@v3
        with:
