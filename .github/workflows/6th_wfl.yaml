@@ -1,0 +1,41 @@
+name: sixth-workflow
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '.github/workflows/**'
+    workflow_dispatch:
+jobs:
+  rust-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: rust-install
+        uses: ATiltedTree/setup-rust@v1
+        with:
+          rust-version: 1.72
+      
+      - name: test-rust-euclidean-algo
+        run: |
+          cd source/rust_euclidean_algo/
+          cargo run 13 169
+
+      - name: upload-test-result-artifact
+        uses: actions/upload-artifact@v3
+        with: 
+          name: result2
+          path: source/rust_euclidean_algo/target/result.txt
+          if-no-files-found: error
+
+  download_job:
+    needs: rust-job
+    runs-on: ubuntu-latest
+     - name: download-artifact-job
+       uses: actions/download-artifact@v3
+       with:
+        name: result2
+
+ 
