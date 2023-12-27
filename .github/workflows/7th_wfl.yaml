@@ -1,6 +1,5 @@
 name: seventh-workflow
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 jobs:
   create-output-job:
     runs-on: ubuntu-latest
