@@ -6,15 +6,18 @@ jobs:
     outputs:
       test_result: ${{ steps.storing-file-content.outputs.test_result }}
     steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+  
       - name: creating-file
-        run: touch ./test.txt
+        run: touch ./test/test.txt
 
       - name: writing-to-file
-        run: echo "THIS IS A TEST" >> ./test.txt
+        run: echo "THIS IS A TEST" >> .test/test.txt
 
       - name: storing-file-content
         id: storing-file-content
-        run: echo "test_result=$(cat ./test.txt)" >> $GITHUB_OUTPUT
+        run: echo "test_result=$(cat ./test/test.txt)" >> $GITHUB_OUTPUT
   
   display-output-job:
     runs-on: ubuntu:latest
