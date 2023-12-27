@@ -1,0 +1,27 @@
+name: seventh-workflow
+on:
+  workflow_dispatch:
+jobs:
+  create-output-job:
+    runs-on: ubuntu-latest
+    outputs:
+      test_result: ${{ steps.storing-file-content.outputs.test_result }}
+    steps:
+      - name: creating-file
+        run: touch ./test.txt
+
+      - name: writing-to-file
+        run: echo "THIS IS A TEST" >> ./test.txt
+
+      - name: storing-file-content
+        id: storing-file-content
+''        run: echo "test_result=$(cat ./test.txt)" >> $GITHUB_OUTPUT
+  
+  display-output-job:
+    runs-on: ubuntu:latest
+    needs: create-output-job
+    steps:
+      - name: display-output
+        run: echo "${{ needs.create-output-job.outputs.test_result }}"
+
+    
