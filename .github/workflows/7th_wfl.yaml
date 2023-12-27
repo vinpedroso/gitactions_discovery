@@ -1,5 +1,8 @@
 name: seventh-workflow
-on: workflow_dispatch
+on: 
+  push:
+    branches: 
+      - "main"
 jobs:
   create-output-job:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
           touch ./test/test.txt
 
       - name: writing-to-file
-        run: echo "THIS IS A TEST" >> .test/test.txt
+        run: echo "THIS IS A TEST" >> ./test/test.txt
 
       - name: storing-file-content
         id: storing-file-content
