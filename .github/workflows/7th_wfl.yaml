@@ -14,7 +14,7 @@ jobs:
 
       - name: storing-file-content
         id: storing-file-content
-''        run: echo "test_result=$(cat ./test.txt)" >> $GITHUB_OUTPUT
+        run: echo "test_result=$(cat ./test.txt)" >> $GITHUB_OUTPUT
   
   display-output-job:
     runs-on: ubuntu:latest
