@@ -25,7 +25,7 @@ jobs:
         run: echo "test_result=$(cat ./test/test.txt)" >> $GITHUB_OUTPUT
   
   display-output-job:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     needs: create-output-job
     steps:
       - name: display-output
