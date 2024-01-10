@@ -1,0 +1,15 @@
+name: eleventh-workflow
+on: workflow_dispatch
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: fail-step
+        id: fail-step
+        run: cat ~/non_existent_folder/non_existent_file.txt
+
+      - name: conditional-step
+        if: ${{ steps.fail-step.outcome }} == 'failure'
+        run: date
+
+      
