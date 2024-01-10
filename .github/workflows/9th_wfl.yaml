@@ -1,4 +1,4 @@
-name: eigth-workflow
+name: ninth-workflow
 on: workflow_dispatch
 jobs:
   main-job:
