@@ -1,4 +1,4 @@
-name: env-var-workflow-level
+name: tenth-workflow
 on: workflow_dispatch
 env:
   DUMMY_VAR: "dummy"
