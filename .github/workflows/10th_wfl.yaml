@@ -1,0 +1,10 @@
+name: env-var-workflow-level
+on: workflow_dispatch
+env:
+  DUMMY_VAR: "dummy"
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show-dummy-var
+        run: echo "${{ env.DUMMY_VAR }}" 
