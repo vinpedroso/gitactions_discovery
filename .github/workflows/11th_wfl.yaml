@@ -9,7 +9,7 @@ jobs:
         run: cat ~/non_existent_folder/non_existent_file.txt
 
       - name: conditional-step
-        if: ${{ steps.fail-step.outcome }} == 'failure'
+        if: ${{failure() && steps.fail-step.outcome }} == 'failure'
         run: date
 
       
