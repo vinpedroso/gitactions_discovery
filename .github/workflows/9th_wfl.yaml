@@ -1,0 +1,10 @@
+name: eigth-workflow
+on: workflow_dispatch
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    env:
+      DUMMY_VAR: "dummy"
+    steps:
+      - name: show-dummy-var
+        run: echo $DUMMY_VAR
