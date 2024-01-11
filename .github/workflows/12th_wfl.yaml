@@ -9,6 +9,7 @@ jobs:
         run: cat ~/non_existent_folder/non_existent_file.txt
   
   conditional-job:
+    needs: fail-job
     runs-on: ubuntu-latest
     if: ${{ failure() }}
     steps:
