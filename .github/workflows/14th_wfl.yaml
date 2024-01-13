@@ -8,6 +8,9 @@ jobs:
         os-options: ["ubuntu-latest","windows-latest"]
     runs-on: ${{ matrix.os-options }}
     steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
       - name: python-setup
         uses: actions/setup-python@v4
         with:
