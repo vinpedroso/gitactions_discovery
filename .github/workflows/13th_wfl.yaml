@@ -1,0 +1,15 @@
+name: thirteenth-workflow
+on: workflow_dispatch
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ignore-fail-step
+        id: wubba-lub-dub-dub
+        run: cat ~/non_existent_folder/non_existent_file.txt
+        continue-on-error: true
+
+      - name: final-step
+        run: date
+
+      
