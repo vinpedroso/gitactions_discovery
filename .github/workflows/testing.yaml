@@ -1,0 +1,14 @@
+name: testing-wfl
+on: workflow_dispatch
+jobs:
+  main:
+    runs-on: ubunut-latest
+    steps:
+      - name: create-env-var
+        run: |
+          export MEANING_OF_LIFE="42"
+
+      - name: displaying-env-var
+        run: |
+          echo $MEANING_OF_LIFE
+      
