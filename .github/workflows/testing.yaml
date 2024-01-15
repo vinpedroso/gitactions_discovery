@@ -2,7 +2,7 @@ name: testing-wfl
 on: workflow_dispatch
 jobs:
   main:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: create-env-var
         run: |
