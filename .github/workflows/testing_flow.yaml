@@ -1,0 +1,12 @@
+name: test2
+on: workflow_dispatch
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: creating-random-output
+        id: order66
+        run: echo "obiwan='badass'" >> $GITHUB_OUTPUT
+      
+      - name: using-output
+        run: echo "${{ steps.order66.output.obiwan }}" 
