@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: creating-random-output
         id: order66
-        run: echo "obiwan='badass'" >> $GITHUB_OUTPUT
+        run: echo "obiwan=$(date)" >> $GITHUB_OUTPUT
       
       - name: using-output
         run: echo "${{ steps.order66.output.obiwan }}" 
