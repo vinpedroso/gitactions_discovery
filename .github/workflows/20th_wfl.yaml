@@ -11,4 +11,4 @@ jobs:
     needs: client-job
     steps:
       - name: display-taste-review 
-        run: echo ${{ needs.client-job.outputs.taste-review }}
+        run: echo "${{ needs.client-job.outputs.taste-review }}"

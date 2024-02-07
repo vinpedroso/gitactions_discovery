@@ -17,4 +17,4 @@ jobs:
       - name: step-output
         id: order66
         run: |
-          echo "taste-var='${{ inputs.fruit }} is good' >> $GITHUB_OUTPUT"
+          echo "taste-var='${{ inputs.fruit }} is good'" >> $GITHUB_OUTPUT
