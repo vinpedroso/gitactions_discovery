@@ -1,0 +1,23 @@
+name: nineteenth-workflow
+on:
+  workflow_call:
+    inputs:
+      fruit:
+        required: true
+        type: string
+    outputs:
+      flavor:
+        required: true
+        type: string
+        value: ${{ jobs.fruit-classifier.outputs.flavor-output }}
+jobs:
+  fruit-classifier:
+    runs-on: ubuntu-latest
+    outputs:
+      flavor-output: ${{ steps.order66.outputs.flavor-var }}
+    steps:
+      - name: step-output
+        id: order66
+        run: |
+          echo "flavor-var='${{ inputs.fruit }} is good' >> $GITHUB_OUTPUT"
+          
