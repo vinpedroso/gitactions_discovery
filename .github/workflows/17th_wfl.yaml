@@ -1,0 +1,20 @@
+name: seventeenth-workflow
+on: workflow_call
+  inputs:
+    dummy-var: 
+      description: variable 1
+      required: true
+      type: string
+    foo-var:
+      description: variable 2
+      required: true
+      type: string
+
+jobs:
+  display-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: main-step
+        run: |
+          echo ${{ inputs.dummy-var }}
+          echo ${{ inputs.foo-var }}
