@@ -1,11 +1,10 @@
-
 name: client-workflow
-on: workflow_dispatch
+on: workflow_call
 jobs:
 	client-job:
- 		uses: ./.github/workflows/reusabl_wfl.yaml
-	 final-job:
-		runs-on: ubuntu-latest
-	  steps:
-	   - name: main-step
-		   run: echo "THE END"
+ 		uses: ./.github/workflows/reusable_wfl.yaml
+	final-job:
+ 		runs-on: ubuntu-latest
+	 	steps:
+	 		- name: echo-cowa
+				run: echo "cowabunga"
