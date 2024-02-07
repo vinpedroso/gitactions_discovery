@@ -1,5 +1,5 @@
-name: fifteeth-workflow
-on: workflow_dispatch
+name: fifteenth-workflow
+on: workflow_call
 
 jobs:
   dummy:
