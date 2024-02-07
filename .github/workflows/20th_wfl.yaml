@@ -10,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: client-job
     steps:
-      - name: dispkay-taste-review 
-        run: echo "${{ needs.client-job.outputs.taste-review }}"
+      - name: display-taste-review 
+        run: echo ${{ needs.client-job.outputs.taste-review }}
