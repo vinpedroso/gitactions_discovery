@@ -3,7 +3,7 @@ on:
   workflow_dispatch
 jobs:
   client-job:
-    uses: ./.github/workflows/nineteenth-workflow.yaml
+    uses: ./.github/workflows/19th_wfl.yaml
     with:
       fruit: kiwi
   final-job:
