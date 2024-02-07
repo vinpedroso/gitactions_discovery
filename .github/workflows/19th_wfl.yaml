@@ -6,18 +6,15 @@ on:
         required: true
         type: string
     outputs:
-      flavor:
-        required: true
-        type: string
-        value: ${{ jobs.fruit-classifier.outputs.flavor-output }}
+      taste-review:
+        value: ${{ jobs.fruit-classifier.outputs.taste-output }}
 jobs:
   fruit-classifier:
     runs-on: ubuntu-latest
     outputs:
-      flavor-output: ${{ steps.order66.outputs.flavor-var }}
+      taste-output: ${{ steps.order66.outputs.taste-var }}
     steps:
       - name: step-output
         id: order66
         run: |
-          echo "flavor-var='${{ inputs.fruit }} is good' >> $GITHUB_OUTPUT"
-          
+          echo "taste-var='${{ inputs.fruit }} is good' >> $GITHUB_OUTPUT"
