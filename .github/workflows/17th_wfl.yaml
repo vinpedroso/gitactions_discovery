@@ -1,14 +1,15 @@
 name: seventeenth-workflow
-on: workflow_call
-  inputs:
-    dummy-var: 
-      description: variable 1
-      required: true
-      type: string
-    foo-var:
-      description: variable 2
-      required: true
-      type: string
+on: 
+  workflow_call:
+    inputs:
+      dummy-var: 
+        description: variable 1
+        required: true
+        type: string
+      foo-var:
+        description: variable 2
+        required: true
+        type: string
 
 jobs:
   display-job:
