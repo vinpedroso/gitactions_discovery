@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   main-job:
     runs-on: ubuntu-latest
-    containers: python:3.12.2-slim-bullseye
+    container: python:3.12.2-slim-bullseye
     steps:
       - name: dummy-step
         run: |
