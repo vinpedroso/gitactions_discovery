@@ -2,7 +2,7 @@ name: twentieth-second-workflow
 on: workflow_dispatch
 jobs:
   idiotic-job:
-    runs-on: ubunto latest
+    runs-on: ubuntu-latest
     steps:
       - name: idiotic-step-a
         run: echo "1"
