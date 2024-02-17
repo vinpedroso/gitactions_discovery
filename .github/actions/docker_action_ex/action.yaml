@@ -4,7 +4,7 @@ inputs:
     required: false
     default: 10
 outputs:
-  result-list:
+  result:
 runs:
   using: docker
   image: Dockerfile
