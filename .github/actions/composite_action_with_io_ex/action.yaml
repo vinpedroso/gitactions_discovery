@@ -16,7 +16,7 @@ runs:
         python-version: "3.11"
     
     - name: iterate-range
-			id: order66
+      id: order66
       shell: bash
       run: |
         touch result.txt
