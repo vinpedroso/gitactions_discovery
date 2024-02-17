@@ -1,4 +1,4 @@
-name: docker-action-ex
+name: docker-action-example
 inputs:
   length:
     required: false
