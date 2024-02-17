@@ -3,7 +3,7 @@ description: add you description here
 inputs:
   length: 
     required: false  
-    default:
+    default: 10
 outputs:
 	list:
 		value: ${{ steps.order66.output.list-output }}
