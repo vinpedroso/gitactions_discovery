@@ -15,4 +15,4 @@ jobs:
 
       - name: display-output
         id: cowabunga
-        run: echo ${{ steps.cowbunga.outputs.result }}
+        run: echo "${{ steps.cowbunga.outputs.result }}""
