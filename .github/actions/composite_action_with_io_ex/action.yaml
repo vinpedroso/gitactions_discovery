@@ -20,5 +20,5 @@ runs:
       shell: bash
       run: |
         touch result.txt
-        python -c "print(${{ inputs.length }}**2)" > result.txt
+        python -c "print(int(${{ inputs.length }})**2)" > result.txt
         echo "number-output=$(cat result.txt)" >> $GITHUB_OUTPUT
