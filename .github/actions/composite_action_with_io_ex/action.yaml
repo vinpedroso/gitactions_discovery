@@ -19,4 +19,6 @@ runs:
       id: order66
       shell: bash
       run: |
-        echo "number-output=$(python -c 'print(int(${{ inputs.init-number }})**2)')" >> $GITHUB_OUTPUT
+        touch result.txt
+        python -c "print(int(${{ inputs.length }}**2)" > result.txt
+        echo "number-output='$(cat result.txt)'" >> $GITHUB_OUTPUT
