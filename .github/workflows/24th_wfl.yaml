@@ -1,14 +1,14 @@
 name: twentieth-fourth-workflow
 on:
   workflow-dispatch
-  jobs:
-    single-job:
-      runs-on: ubuntu-latest
-      steps:
-        - name: branch-checkout
-          uses: actions/checkout@v4
+jobs:
+  single-job:
+     runs-on: ubuntu-latest
+     steps:
+       - name: branch-checkout
+        uses: actions/checkout@v4
 
-        - name: composite-action-with-input
-          uses: ./.github/actions/composite_action_with_input_ex
-          with:
-            length: 23
+      - name: composite-action-with-input
+        uses: ./.github/actions/composite_action_with_input_ex
+        with:
+           length: 23
