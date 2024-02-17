@@ -11,7 +11,7 @@ jobs:
       - name: composite-action-with-io
         uses: ./.github/actions/composite_action_with_io_ex
         with:
-          length: 12
+          init-number: 12
 
       - name: display-output
         id: cowabunga
