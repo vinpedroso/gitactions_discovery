@@ -1,12 +1,12 @@
 name: composite-action-with-io-ex
 description: add you description here
 inputs:
-  length: 
+  init-number: 
     required: false  
     default: 10
 outputs:
-  result:
-    value: ${{ steps.order66.output.list-output }}
+  final-number:
+    value: ${{ steps.order66.output.number-output }}
 runs: 
   using: composite
   steps:
@@ -15,10 +15,10 @@ runs:
       with:
         python-version: "3.11"
     
-    - name: iterate-range
+    - name: get-final-number
       id: order66
       shell: bash
       run: |
         touch result.txt
-        python -c "print([i for i in range(1,${{ inputs.length }}+1)])" > result.txt
-        echo "list-output=$(cat result.txt)" >> $GITHUB_OUTPUT
+        python -c "print(${{ inputs.length }}**2)" > result.txt
+        echo "number-output=$(cat result.txt)" >> $GITHUB_OUTPUT
