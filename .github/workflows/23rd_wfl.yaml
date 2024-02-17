@@ -1,0 +1,9 @@
+name: twentieth-third-workflow
+on: 
+  workflow_dispatch:
+jobs:
+  idiotic-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: composite-action-step
+        uses: ./github/actions/composite_action_ex
