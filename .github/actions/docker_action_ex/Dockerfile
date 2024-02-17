@@ -2,4 +2,4 @@
 
     COPY example_script.py /
 
-    CMD ["python","example_script.py"]
+    CMD ["python","/example_script.py"]
