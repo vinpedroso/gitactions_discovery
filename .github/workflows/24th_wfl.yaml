@@ -5,7 +5,7 @@ jobs:
   single-job:
      runs-on: ubuntu-latest
      steps:
-       - name: branch-checkout
+      - name: branch-checkout
         uses: actions/checkout@v4
 
       - name: composite-action-with-input
