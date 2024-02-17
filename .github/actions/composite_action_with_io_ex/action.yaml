@@ -1,0 +1,24 @@
+name: composite-action-with-io-ex
+description: add you description here
+inputs:
+  length: 
+    required: false  
+    default:
+outputs:
+	list:
+		value: ${{ steps.order66.output.list-output }}
+runs: 
+  using: composite
+  steps:
+    - name: python-install
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    
+    - name: iterate-range
+			id: order66
+      shell: bash
+      run:  |
+				touch result.txt
+				python -c "print([i for i in range(1,${{ inputs.length }}+1)])" > result.txt
+				echo "list-output=$(cat result.txt)" >> $GITHUB_OUTPUT

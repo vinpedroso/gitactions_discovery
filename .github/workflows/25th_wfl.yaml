@@ -1,0 +1,18 @@
+name: twentieth-fifth-workflow
+on:
+  workflow_dispatch
+jobs:
+  single-job:
+     runs-on: ubuntu-latest
+     steps:
+      - name: branch-checkout
+        uses: actions/checkout@v4
+
+      - name: composite-action-with-input
+        id: cowabunga
+        uses: ./.github/actions/composite_action_with_io_ex
+        with:
+           length: 15
+
+      - name: display-output
+        run: echo ${{ steps.cowabunga.outputs.list }}
