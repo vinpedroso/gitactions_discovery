@@ -5,7 +5,7 @@ inputs:
     required: false  
     default: 10
 outputs:
-	list:
+	list-from-length:
 		value: ${{ steps.order66.output.list-output }}
 runs: 
   using: composite

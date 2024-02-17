@@ -15,4 +15,4 @@ jobs:
            length: 15
 
       - name: display-output
-        run: echo ${{ steps.cowabunga.outputs.list }}
+        run: echo ${{ steps.cowabunga.outputs.list-from-length }}
