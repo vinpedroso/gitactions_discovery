@@ -5,6 +5,7 @@ inputs:
     default: 10
 outputs:
   result:
+    description: shalala
 runs:
   using: docker
   image: Dockerfile
