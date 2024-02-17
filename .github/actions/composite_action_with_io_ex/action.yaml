@@ -5,8 +5,8 @@ inputs:
     required: false  
     default: 10
 outputs:
-	result:
-		value: ${{ steps.order66.output.list-output }}
+  result:
+    value: ${{ steps.order66.output.list-output }}
 runs: 
   using: composite
   steps:
