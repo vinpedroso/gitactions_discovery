@@ -1,0 +1,18 @@
+name: composite-action-with-input-ex
+description: add you description here
+inputs:
+  length:
+    description: add input description here
+    required: false
+    default: 10
+runs:
+  using: composite
+  steps:
+    - name: python-install
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    
+    - name: iterate-range
+      shell: bash
+      run:  python -c "print([i for i in range(1,${{ inputs.length }}+1)])"
