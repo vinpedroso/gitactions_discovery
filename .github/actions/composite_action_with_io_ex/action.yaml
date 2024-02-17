@@ -5,7 +5,7 @@ inputs:
     required: false  
     default: 10
 outputs:
-	list-from-length:
+	result:
 		value: ${{ steps.order66.output.list-output }}
 runs: 
   using: composite
@@ -18,7 +18,7 @@ runs:
     - name: iterate-range
 			id: order66
       shell: bash
-      run:  |
-				touch result.txt
-				python -c "print([i for i in range(1,${{ inputs.length }}+1)])" > result.txt
-				echo "list-output=$(cat result.txt)" >> $GITHUB_OUTPUT
+      run: |
+        touch result.txt
+        python -c "print([i for i in range(1,${{ inputs.length }}+1)])" > result.txt
+        echo "list-output=$(cat result.txt)" >> $GITHUB_OUTPUT

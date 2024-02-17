@@ -3,16 +3,16 @@ on:
   workflow_dispatch
 jobs:
   single-job:
-     runs-on: ubuntu-latest
-     steps:
-      - name: branch-checkout
-        uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - name: branch-checkout 
+        uses: actions/checkouts@v4
 
-      - name: composite-action-with-input
-        id: cowabunga
+      - name: composite-action-with-io
         uses: ./.github/actions/composite_action_with_io_ex
         with:
-           length: 15
+          length: 12
 
       - name: display-output
-        run: echo ${{ steps.cowabunga.outputs.list-from-length }}
+        id: cowabunga
+        run: echo ${{ steps.cowbunga.outputs.result }}
