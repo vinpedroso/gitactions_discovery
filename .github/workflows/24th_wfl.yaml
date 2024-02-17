@@ -1,6 +1,6 @@
 name: twentieth-fourth-workflow
 on:
-  workflow-dispatch
+  workflow_dispatch
 jobs:
   single-job:
      runs-on: ubuntu-latest
