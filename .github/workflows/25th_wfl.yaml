@@ -9,10 +9,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: composite-action-with-io
-        id: cowabunga
+        id: hakuna-matata
         uses: ./.github/actions/composite_action_with_io_ex
         with:
           init-number: 12
 
       - name: display-output
-        run: echo "${{ steps.cowbunga.outputs.final-number }}"
+        run: echo "${{ steps.hakuna-matata.outputs.final-number }}"
