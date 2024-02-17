@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: branch-checkout
-        actions: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: composite-action-step
         uses: ./github/actions/composite_action_ex
