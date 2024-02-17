@@ -1,0 +1,11 @@
+---
+name: docker-action-ex
+inputs:
+  length:
+    required: false
+    default: 10
+outputs:
+  list:
+runs:
+  using: docker
+  image: Dockerfile
