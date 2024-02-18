@@ -12,7 +12,7 @@ jobs:
         id: cowabunga
         uses: ./.github/actions/docker_action_ex
         with:
-          length: 9
+          init-number: 9
 
       - name: display-output
         run: echo "${{ steps.cowabunga.outputs.final_number }}"
