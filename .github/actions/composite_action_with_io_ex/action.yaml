@@ -17,7 +17,12 @@ runs:
     
     - name: get-final-number
       id: order66
+      shell: bash
       run: |
         touch result.txt
         python -c "print(int(${{ inputs.init-number }})**2)" > result.txt
         echo "number-output='$(cat result.txt)'" >> $GITHUB_OUTPUT
+
+    - name: adding-github-path
+      shell: bash
+      run: echo "${{ github.action_path }}" >> $GITHUB_PATH
