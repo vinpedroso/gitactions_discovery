@@ -9,10 +9,10 @@ jobs:
         uses: actions/checkout@v4
       
       - name: docker-action
+        id: cowabunga
         uses: ./.github/actions/docker_action_ex
         with:
           length: 9
 
       - name: display-output
-        id: cowabunga
         run: echo "${{ steps.cowabunga.outputs.list }}"
