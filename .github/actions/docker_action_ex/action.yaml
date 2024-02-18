@@ -1,10 +1,10 @@
 name: docker-action-example
 inputs:
-  length:
+  init-number:
     required: false
     default: 10
 outputs:
-  result:
+  final-number:
     description: action output
 runs:
   using: docker

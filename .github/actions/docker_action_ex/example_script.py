@@ -1,7 +1,7 @@
 import os
 
 def main() -> None:
-    input_var = int(os.environ["INPUT_LENGTH"])
+    input_var = int(os.environ["INPUT_INIT-NUMBER"])
     result_number = input_var - 5
     print(f'result="{result_number}" >> $GITHUB_OUTPUT')
     return None
