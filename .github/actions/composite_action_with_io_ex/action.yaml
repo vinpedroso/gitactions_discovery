@@ -6,7 +6,7 @@ inputs:
     default: 10
 outputs:
   final-number:
-    value: ${{ steps.order66.output.number-output }}
+    value: ${{ steps.order66.outputs.number-output }}
 runs: 
   using: composite
   steps:
