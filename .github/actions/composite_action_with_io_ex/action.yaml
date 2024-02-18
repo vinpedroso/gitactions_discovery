@@ -17,7 +17,6 @@ runs:
     
     - name: get-final-number
       id: order66
-      shell: bash
       run: |
         touch result.txt
         python -c "print(int(${{ inputs.init-number }})**2)" > result.txt
